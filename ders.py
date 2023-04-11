@@ -38,34 +38,70 @@ değişken tanımlama kuralları :
 #örnek :
 _ad ="zehra"
 Soyad = "bekar"
-print(_ad,Soyad)
+print(_ad,Soyad) #zehra bekar
 f1=5e3 #( 5*10^3 demektir) 
 f2=15e-3 #(15i 1000e böler = 0.015)
 m1=True
+karsilastirma = 5<6
+print(f1,f2,m1,karsilastirma) # 5000.0 0.015 True True
 
-"""
-veri türleri arasında tür değişimi yapmak için : türadı(değişkenadı) . örnek :
-sayi1=int("5")
-mantıksal =bool("true")
-"""
 #bir değişkenin veri türünü öğrenmek için  : type(değişkenadı) . örnek :
 print(type(_ad)) # <class 'str'> çıktısını verdi
 
-#kullanıcıdan bilgi almak için : input(ekranda görünecek mesaj). girilen değerler stringdir.
+
+#kullanıcıdan bilgi almak için : input(ekranda görünecek mesaj). klavyeden girilen her değer stringdir.
+deger = input("klavyeden değer gir : ")
+sonuc=deger*20
+print(sonuc)
+#5 girdim çıktı olarak 55555555555555555555 verdi.çünkü klavyeden girilen değer string olduğu için * çarpma işlemi olarak kullanılamadı.
+#int'e dönüştürürsek çarpma işlemini yapar :
+deger = int(input("klavyeden değer gir : "))
+sonuc=deger*20
+print(sonuc)
+#8 grdim 160 çıktısını verdi
+
+
 #eğer girilen değerin veri türünün int olmasını (veya başka bir şey) istiyorsak tür değişimi yapmalıyız :
 mesaj = int(input("bir değer giriniz"))
 print(mesaj)
-#birden fazla değeri aynı anda yazdırırken aralarında varsayılan olarak gelen virgül yerine istediğimiz bir ayırıcıyı koymak için : sep=" istediğimiz ayırıcı mesela |"
+
+
+#birden fazla değeri aynı anda yazdırırken aralarında varsayılan olarak gelen boşluk yerine istediğimiz bir ayırıcıyı koymak için : sep=" istediğimiz ayırıcı mesela |"
 print(f1,f2,m1,sep="|") # çıktı : 5000.0|0.015|True
-#en sondaki değerin sonunda varsayılan olarak gelen \n kaçış değeri yerine sonuna da | koysun (veya başka bir şey )istersek : 
+
+#en sondaki değerin sonunda varsayılan olarak gelen \n kaçış değeri yerine sonuna da | koysun (veya başka bir şey koysun)istersek : 
 print(f1,f2,m1,sep="|",end="|") # çıktı : 5000.0|0.015|True|
+
+# eğer " \ " (ters slash) kullanacaksak yanyana iki tane kullanmalıyız -> \\ 
+
 """
 kaçış karakterleri : 
 \b : boşluk karakteri kadar boşluk bırakır
 \t : tab tuşu kadar boşluk bırakır
 \n : bir alt satıra geçer 
 """
-#end ve sep kullandığımızda peşpeşe printlerin yanyana çıktısını verir
+
+#end kullandığımızda peş peşe olan printlerin çıktısını yanyana verir. örnek : 
+print(f1,f2,sep=",",end=";")
+print(m1,karsilastirma,sep=":")
+# çıktı : 5000.0,0.015;True:True
+# end kullanıdğımızda çıktıların alt alta gelmesi için end ile belirttiğimiz karakterin yanına \n eklemeliyiz :
+print(f1,f2,sep=",",end=";\n")
+print(m1,karsilastirma,sep=":")
+""" çıktı :
+5000.0,0.015;
+True:True
+"""
+
+
+
+
+
+
+
+
+
+
 
 
 
