@@ -1,3 +1,4 @@
+import math
 """
 karar yapıları ikiye ayrılır : 
 * doğru - yanlış karar yapısı (tek koşulun kontrol edildiği karar yapısı = if, birden fazla koşulun kontrol edildiği karar yapısı = if-else)
@@ -69,3 +70,22 @@ elif sayi==5:
     print("beş")
 else:
     print("geçersiz sayı girdiniz")
+
+#ideal kilo ile güncel kilo farkını bulma:
+boy=int(input("boyunuz : "))
+yas=int(input("yaşınız : "))
+cinsiyet=(input("cinsiyetiniz : "))
+kilo=int(input("kilonuz : "))
+if cinsiyet == "kadın":
+    ik=(boy-100)*0.8+(yas/10)
+else:
+    ik=(boy-100)*0.9+(yas/10)
+ik=round(ik) #ideal kilo sonucunu yuvarladık
+print("ideal kilonuz : " , ik)
+fark=ik-kilo
+if fark<0:
+    print(abs(fark)," kilo vermelisiniz")
+elif fark>0 :
+    print(fark," kilo almalısınız")
+else:
+    print("tebrikler ideal kilonuzdasınız.")
